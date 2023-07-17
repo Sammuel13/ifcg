@@ -11,144 +11,208 @@
   <link rel="modulepreload" href="assets/app-c412b7b5.js">
   <link rel="stylesheet" href="assets/app-db5a0692.css">
   <style>
-    h2 > a > span {
-      padding-left: 10px;
-    }
+      h2 > a > span {
+          padding-left: 10px;
+      }
   </style>
-
   <script>
-    const alwaysLightMode = false;
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-      if (localStorage.theme === 'system') {
-        if (e.matches) {
-          document.documentElement.classList.add('dark');
-          document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          document.documentElement.setAttribute('data-theme', 'light');
-        }
-      }
-      updateThemeAndSchemeColor();
-    });
-
-    function updateTheme() {
-      if (!('theme' in localStorage)) {
-        localStorage.theme = 'system';
-      }
-      switch (localStorage.theme) {
-        case 'system':
-          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.setAttribute('data-theme', 'dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.setAttribute('data-theme', 'light');
+      const alwaysLightMode = false;
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          if (localStorage.theme === 'system') {
+              if (e.matches) {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+              } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
+              }
           }
-          document.documentElement.setAttribute('color-theme', 'system');
-          break;
-        case 'dark':
-          document.documentElement.classList.add('dark');
-          document.documentElement.setAttribute('color-theme', 'dark');
-          document.documentElement.setAttribute('data-theme', 'dark');
-          break;
-        case 'light':
-          document.documentElement.classList.remove('dark');
-          document.documentElement.setAttribute('color-theme', 'light');
-          document.documentElement.setAttribute('data-theme', 'light');
-          break;
+          updateThemeAndSchemeColor();
+      });
+      function updateTheme() {
+          if (!('theme' in localStorage)) {
+              localStorage.theme = 'system';
+          }
+          switch (localStorage.theme) {
+              case 'system':
+                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                      document.documentElement.classList.add('dark');
+                      document.documentElement.setAttribute('data-theme', 'dark');
+                  } else {
+                      document.documentElement.classList.remove('dark');
+                      document.documentElement.setAttribute('data-theme', 'light');
+                  }
+                  document.documentElement.setAttribute('color-theme', 'system');
+                  break;
+              case 'dark':
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('color-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  break;
+              case 'light':
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('color-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  break;
+          }
+          updateThemeAndSchemeColor();
       }
-      updateThemeAndSchemeColor();
-    }
-
-    function updateThemeAndSchemeColor() {
-      if (!alwaysLightMode) {
-        if (document.documentElement.classList.contains('dark')) {
-          document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'dark');
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#171923');
-
-          return;
-        }
-        document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light');
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+      function updateThemeAndSchemeColor() {
+          if (!alwaysLightMode) {
+              if (document.documentElement.classList.contains('dark')) {
+                  document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'dark');
+                  document.querySelector('meta[name="theme-color"]').setAttribute('content', '#171923');
+                  return;
+              }
+              document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light');
+              document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+          }
       }
-    }
-    updateTheme();
+      updateTheme();
   </script>
 </head>
 <body>
-  <div class="relative overflow-auto dark:bg-dark-700" id="docsScreen">
-    <div class="relative lg:flex lg:items-start">
-      <aside class="hidden fixed top-0 bottom-0 left-0 z-20 h-full w-16 bg-gradient-to-b from-gray-100 to-white transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full dark:from-dark-800 dark:to-dark-700">
-        <div class="relative min-h-0 flex-1 flex flex-col xl:w-80">
-          <a class="flex items-center py-8 px-4 lg:px-12 xl:px-16" style="padding-left: 0 !important">
-            <img class="w-8 h-8 transition-all duration-300 lg:w-40 lg:h-12" src="IFGC/IFGC-icone-p&b.png" alt="stick" style="width: 50% !important; height: 50% !important;">
-            <p style="font-size: 49px;padding-top: 5%;margin-left: 5%;">IFGC</p>
-          </a>
-          <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
-            <nav id="indexed-nav" class="hidden lg:block lg:mt-4">
-              <div class="docs_sidebar">
-                <ul>
-                  <li onclick="location.href = '#apresentacao'">
-                    <h2>Apresentação</h2>
-                  </li>
-                  <li onclick="location.href = '#calendario'">
-                    <h2>Calendário</h2>
-                  </li>
-                  <li onclick="location.href = '#formato'">
-                    <h2>Formato</h2>
-                  </li>
-                  <li onclick="location.href = '#historico'">
-                    <h2>Atualizações</h2>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
+<div class="relative overflow-auto dark:bg-dark-700" id="docsScreen">
+  <div class="relative lg:flex lg:items-start">
+    <aside
+        class="hidden fixed top-0 bottom-0 left-0 z-20 h-full w-16 bg-gradient-to-b from-gray-100 to-white transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full dark:from-dark-800 dark:to-dark-700">
+      <div class="relative min-h-0 flex-1 flex flex-col xl:w-80">
+        <a class="flex items-center py-8 px-4 lg:px-12 xl:px-16" style="padding-left: 0 !important">
+          <img class="w-8 h-8 transition-all duration-300 lg:w-40 lg:h-12" src="IFGC/IFGC-icone-p&b.png" alt="stick"
+               style="width: 50% !important; height: 50% !important;">
+          <p style="font-size: 49px;padding-top: 5%;margin-left: 5%;">IFGC</p>
+        </a>
+        <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
+          <nav id="indexed-nav" class="hidden lg:block lg:mt-4">
+            <div class="docs_sidebar">
+              <ul>
+                <li onclick="location.href = '#apresentacao'">
+                  <h2>Apresentação</h2>
+                </li>
+                <li onclick="location.href = '#calendario'">
+                  <h2>Calendário</h2>
+                </li>
+                <li onclick="location.href = '#formato'">
+                  <h2>Formato</h2>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-      </aside>
-      <section class="flex-1 dark:bg-dark-700">
-        <div class="max-w-screen-lg px-8 sm:px-16 lg:px-24">
-          <section class="mt-8 md:mt-16">
-            <section class="docs_main max-w-prose">
-              <div id="main-content">
-                <img src="IFGC/IFGC-logo-p&b.png" alt="logo">
-                <h2 id="apresentacao"><a href="#apresentacao"><span>Apresentação</span></a></h2>
-                <p>
-                  Esta página é dedicada ao campeonato <b>Inazuma Fighting Games Championship (IFGC)</b>, um torneio de jogos eletrônicos de luta que será
-                  realizado como parte da <b>Mostra de Cultura Japonesa do IFPB</b>, que ocorrerá durante a <b>Semana de Educação, Ciência e Tecnologia (SECT)
-                  no IFPB, Campus João Pessoa</b>. A referida mostra cultural será dirigida pelo Prof. Dr. Luís Romeu Nunes,
-                  enquanto o campeonato contará com uma staff própria, sendo composta por:
-                  <ul style="list-style: disc">
-                    <li>Juan Pablo - Ex aluno do IFPB;</li>
-                    <li>Fernando de Morais - Ex aluno do IFPB;</li>
-                    <li>Indefinido - Aluno monitor;</li>
-                    <li>Indefinido - Aluno monitor.</li>
-                  </ul>
-                </p>
-                <i>
-                  OBS.: A página será atualizada periodicamente com notícias sobre o avanço da organização do campeonato, com
-                  informes necessários àqueles que pretendem participar.
-                </i>
-                <p></p>
-                <h2 id="calendario"><a href="#calendario"><span>Calendário</span></a></h2>
-                <p></p>
-                <h2 id="formato"><a href="#formato"><span>Formato do campeonato</span></a></h2>
-                <p></p>
-                <h2 id="historico"><a href="#formato"><span>Histórico de atualizações</span></a></h2>
-                <p>Data: 6 de julho 16:29</p>
-                <p>
-                  Os jogos que serão utilizados no campeonato ainda estão em processo de seleção. Serão escolhidos dois jogos
-                  após votação aberta a todos os interessados no evento, por meio do seguinte
-                  <a href="https://forms.gle/6KAwW5fgVkxm3X519" style="color: #b8bb26">Formulário do Google</a>. Por favor, votar apenas se houver interesse
-                  em participar ou atender ao campeonato como espectador.
-                </p>
-                <p></p>
+      </div>
+    </aside>
+    <section class="flex-1 dark:bg-dark-700">
+      <div class="max-w-screen-lg px-8 sm:px-16 lg:px-24">
+        <section class="mt-8 md:mt-16">
+          <section class="docs_main max-w-prose">
+            <div id="main-content">
+              <img src="IFGC/IFGC-logo-p&b.png" alt="logo">
+              <h2 id="apresentacao"><a href="#apresentacao"><span>Apresentação</span></a></h2>
+              <p>
+                Esta página é dedicada ao campeonato <b>Inazuma Fighting Games Championship (IFGC)</b>, um torneio de
+                jogos eletrônicos de luta que será
+                realizado como parte da <b>Mostra de Cultura Japonesa do IFPB</b>, que ocorrerá durante a <b>Semana de
+                Educação, Ciência e Tecnologia (SECT)
+                no IFPB, Campus João Pessoa</b>. A referida mostra cultural será dirigida pelo Prof. Dr. Luís Romeu
+                Nunes,
+                enquanto o campeonato contará com uma staff própria, sendo composta por:
+              </p>
+              <ul style="list-style: disc">
+                <li>Juan Pablo - Ex aluno do IFPB;</li>
+                <li>Fernando de Morais - Ex aluno do IFPB;</li>
+                <li>Indefinido - Aluno monitor;</li>
+                <li>Indefinido - Aluno monitor.</li>
+              </ul>
+              <p></p>
+              <p>
+                Os jogos que serão utilizados no campeonato ainda estão em processo de seleção. Serão escolhidos dois
+                jogos
+                após votação aberta a todos os interessados no evento, por meio do seguinte
+                <a href="https://forms.gle/6KAwW5fgVkxm3X519" style="color: #b8bb26">Formulário do Google</a>. Por
+                favor, votar apenas se houver interesse
+                em participar ou atender ao campeonato como espectador.
+              </p>
+              <p></p>
+              <i>
+                OBS.: A página será atualizada periodicamente com notícias sobre o avanço da organização do campeonato,
+                com
+                informes necessários àqueles que pretendem participar.
+              </i>
+              <h2 id="calendario"><a href="#calendario"><span>Calendário</span></a></h2>
+              <p></p>
+              <p>
+                O campeonato ocorrerá nos dias 6 e 7 de Outubro, em cada um dos dois dias, os jogos serão iniciados à partir
+                das 10:00 da manhã. Caso o campeão seja decidido antes do evento da <b>SECT</b> finalizar, um modo free-play será
+                liberado
+              </p>
+              <p></p>
+              <h2 id="formato"><a href="#formato"><span>Formato do campeonato</span></a></h2>
+              <p>
+                O formato do campeonato seguirá o comumente adotado por outras competições do estilo nas fases finais,
+                também conhecidas como <b>Top-8</b>. Dessa forma, os competidores estarão distribuídos em chaves, um
+                competidor contra o outro e as partidas serão decididas no sistema <i>melhor de três</i>: aqueles
+                jogadores que vencerem duas lutas (as quais serão compostas por pelo menos dois rounds &#x2014; a
+                depender do jogo determinado para a competição, pode ser um número diferente) será declarado vencedor e
+                avança na chave. O processo é repetido durante a competição até ser definido o <b>campeão</b>.
+              </p>
+              <p>
+                Este campeonato, o IFGC, é uma competição de <b>eliminação dupla</b>. Para facilitar a compreensão,
+                acompanhe o exemplo abaixo de como estará organizado o <b>Inazuma Fighting Games Championship</b> nos
+                dias de evento.
+              </p>
+              <p>
+                Inscreveram-se oito participantes para o campeonato, os competidores <b>A, B, C, D, E, F, G</b> e
+                <b>H.</b> No dia da competição, foram sorteados os primeiros confrontos, no qual ficaram decididos os
+                embates da seguinte forma:
+              </p>
+              <div id="org40ddc3b" class="figure" style="overflow: auto">
+                <img src="IFGC/tabela_geral.svg" alt="Tabela geral" class="org-svg" style="width: 1000px !important; max-width: none !important"/>
               </div>
-            </section>
+              <p></p>
+              <p>
+                No nosso exemplo, os competidores jogaram as primeiras partidas e os resultados ficaram como na imagem
+                abaixo:
+              </p>
+              <div id="org7567386" class="figure" style="overflow: auto">
+                <img src="IFGC/tabela_avanco_1.svg" alt="Resultados da primeira rodada" class="org-svg" style="width: 1000px !important; max-width: none !important"/>
+              </div>
+              <p></p>
+              <p>
+                Em torneios de eliminação dupla, cada participante pode perder até duas vezes para, de fato, estar fora
+                da competição. Dessa forma, os competidores que perderam serão enviados para uma outra chave, a <i>losers'
+                bracket</i> (chave dos perdedores), enquanto os vencedores seguem na <i>winners' bracket</i> (chave dos
+                vencedores).
+              </p>
+              <p>
+                Seguindo o nosso exemplo, dado os resultados anteriores, nós teremos a seguinte organização:
+              </p>
+              <div id="org9aa7ff9" class="figure" style="overflow: auto">
+                <img src="IFGC/tabela_avanco_2.svg" alt="Chaves winners e losers distribuídas" class="org-svg" style="width: 1000px !important; max-width: none !important"/>
+              </div>
+              <p></p>
+              <p>
+                Então, como pode ser visto na imagem acima, o campeonato correrá em duas chaves distintas, que se
+                encontram na <b>Grande Final</b> (partida 14), que ocorre entre o vencedor da <i>winners' bracket</i>
+                contra o vencedor da <i>losers' bracket</i>.
+              </p>
+              <p>
+                Existem duas peculiaridades nas finais de cada chave (<i>winners</i> e <i>losers</i>), assim como na
+                Grande Final:
+              </p>
+              <li>As partidas serão decididas pelo sistema <i>melhor de cinco</i> (o jogador que vencer três lutas é
+                declarado campeão);
+              </li>
+              <li>Na Grande Final, caso o vencedor da <i>winners</i> seja derrotado, acontece o que é chamado de "<i>reset</i>"
+                das chaves, onde os dois finalistas se enfrentam mais uma vez, numa partida em <i>melhor de cinco</i>
+                para definir o <b>grande campeão</b>.
+              </li>
+              <p></p>
+            </div>
           </section>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </section>
   </div>
+</div>
 </body>
 </html>

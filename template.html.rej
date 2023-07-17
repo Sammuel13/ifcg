@@ -1,0 +1,46 @@
+diff a/template.html b/template.html	(rejected hunks)
+@@ -133,6 +133,44 @@
+                 <h2 id="calendario"><a href="#calendario"><span>Calendário</span></a></h2>
+                 <p></p>
+                 <h2 id="formato"><a href="#formato"><span>Formato do campeonato</span></a></h2>
++		<p>
++		  O formato do campeonato seguirá o comumente adotado por outras competições do estilo nas fases finais, também conhecidas como <b>Top-8</b>. Dessa forma, os competidores estarão distribuídos em chaves, um competidor contra o outro e as partidas serão decididas no sistema <i>melhor de três</i>: aqueles jogadores que vencerem duas lutas (as quais serão compostas por pelo menos dois rounds &#x2014; a depender do jogo determinado para a competição, pode ser um número diferente)  será declarado vencedor e avança na chave. O processo é repetido durante a competição até ser definido o <b>campeão</b>.
++		</p>
++		<p>
++		  Este campeonato, o IFGC, é uma competição de <b>eliminação dupla</b>. Para facilitar a compreensão, acompanhe o exemplo abaixo de como estará organizado o <b>Inazuma Fighting Games Championship</b> nos dias de evento.
++		</p>
++		<p>
++		  Inscreveram-se oito participantes para o campeonato, os competidores <b>A, B, C, D, E, F, G</b> e <b>H.</b> No dia da competição, foram sorteados os primeiros confrontos, no qual ficaram decididos os embates da seguinte forma:
++		</p>
++		<div id="org40ddc3b" class="figure">
++		  <p><img src="IFGC/tabela_geral.svg" alt="Tabela geral" class="org-svg" />
++		  </p>
++		</div>
++		<p>
++		  No nosso exemplo, os competidores jogaram as primeiras partidas e os resultados ficaram como na imagem abaixo:
++		</p>
++		<div id="org7567386" class="figure">
++		  <p><img src="IFGC/tabela_avanco_1.svg" alt="Resultados da primeira rodada" class="org-svg" />
++		  </p>
++		</div>
++		<p>
++		  Em torneios de eliminação dupla, cada participante pode perder até duas vezes para, de fato, estar fora da competição. Dessa forma, os competidores que perderam serão enviados para uma outra chave, a <i>losers' bracket</i> (chave dos perdedores), enquanto os vencedores seguem na <i>winners' bracket</i> (chave dos vencedores).
++		</p>
++		<p>
++		  Seguindo o nosso exemplo, dado os resultados anteriores, nós teremos a seguinte organização:
++		</p>
++		<div id="org9aa7ff9" class="figure">
++		  <p><img src="IFGC/tabela_avanco_2.svg" alt="Chaves winners e losers distribuídas" class="org-svg" />
++		  </p>
++		</div>
++		<p>
++		  Então, como pode ser visto na imagem acima, o campeonato correrá em duas chaves distintas, que se encontram na <b>Grande Final</b> (partida 14), que ocorre entre o vencedor da <i>winners' bracket</i> contra o vencedor da <i>losers' bracket</i>.
++		</p>
++		<p>
++		  Existem duas peculiaridades nas finais de cada chave (<i>winners</i> e <i>losers</i>), assim como na Grande Final:
++		</p>
++		<li>As partidas serão decididas pelo sistema <i>melhor de cinco</i> (o jogador que vencer três lutas é declarado campeão);</li>
++		<li>Na Grande Final, caso o vencedor da <i>winners</i> seja derrotado, acontece o que é chamado de "<i>reset</i>" das chaves, onde os dois finalistas se enfrentam mais uma vez, numa partida em <i>melhor de cinco</i> para definir o <b>grande campeão</b>.</li>
+                 <p></p>
+                 <h2 id="historico"><a href="#formato"><span>Histórico de atualizações</span></a></h2>
+                 <p>Data: 6 de julho 16:29</p>
