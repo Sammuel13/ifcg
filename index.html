@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html data-theme="light" color-theme="system" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="assets/ins2wgm.css">
+  <link rel="preload" as="style" href="assets/app-db5a0692.css">
+  <link rel="modulepreload" href="assets/app-c412b7b5.js">
+  <link rel="stylesheet" href="assets/app-db5a0692.css">
+  <style>
+      h2 > a > span {
+          padding-left: 10px;
+      }
+  </style>
+  <script>
+      const alwaysLightMode = false;
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          if (localStorage.theme === 'system') {
+              if (e.matches) {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+              } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
+              }
+          }
+          updateThemeAndSchemeColor();
+      });
+      function updateTheme() {
+          if (!('theme' in localStorage)) {
+              localStorage.theme = 'system';
+          }
+          switch (localStorage.theme) {
+              case 'system':
+                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                      document.documentElement.classList.add('dark');
+                      document.documentElement.setAttribute('data-theme', 'dark');
+                  } else {
+                      document.documentElement.classList.remove('dark');
+                      document.documentElement.setAttribute('data-theme', 'light');
+                  }
+                  document.documentElement.setAttribute('color-theme', 'system');
+                  break;
+              case 'dark':
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('color-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  break;
+              case 'light':
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('color-theme', 'light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  break;
+          }
+          updateThemeAndSchemeColor();
+      }
+      function updateThemeAndSchemeColor() {
+          if (!alwaysLightMode) {
+              if (document.documentElement.classList.contains('dark')) {
+                  document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'dark');
+                  document.querySelector('meta[name="theme-color"]').setAttribute('content', '#171923');
+                  return;
+              }
+              document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light');
+              document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+          }
+      }
+      updateTheme();
+  </script>
+</head>
+<body>
+<div class="relative overflow-auto dark:bg-dark-700" id="docsScreen">
+  <div class="relative lg:flex lg:items-start">
+    <aside
+        class="hidden fixed top-0 bottom-0 left-0 z-20 h-full w-16 bg-gradient-to-b from-gray-100 to-white transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full dark:from-dark-800 dark:to-dark-700">
+      <div class="relative min-h-0 flex-1 flex flex-col xl:w-80">
+        <a class="flex items-center py-8 px-4 lg:px-12 xl:px-16" style="padding-left: 50px !important">
+          <p style="font-size: 49px;padding-top: 5%;margin-left: 5%;">SECT</p>
+        </a>
+        <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
+          <nav id="indexed-nav" class="hidden lg:block lg:mt-4">
+            <div class="docs_sidebar">
+              <ul>
+                <li onclick="location.href = 'fgc.html'">
+                  <h2>IFJP (Campeonato de Jogos)</h2>
+                </li>
+                <li onclick="">
+                  <h2>Ikebana</h2>
+                </li>
+                <li onclick="">
+                  <h2>Campeonato de hashi</h2>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </aside>
+    <section class="flex-1 dark:bg-dark-700">
+      <div class="max-w-screen-lg px-8 sm:px-16 lg:px-24">
+        <section class="mt-8 md:mt-16">
+          <section class="docs_main max-w-prose">
+            <div id="main-content">
+              <h1>Mostra cultural japonesa do IFPB - Campus João Pessoa</h1>
+            </div>
+          </section>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
